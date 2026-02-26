@@ -1,0 +1,200 @@
+/* ==========================================================================
+   Layout Styles
+   ========================================================================== */
+
+/* -----------------------------------------------------------------------
+   Container
+   ----------------------------------------------------------------------- */
+.container {
+  width: 100%;
+  padding-left: var(--space-3);
+  padding-right: var(--space-3);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Tablet */
+@media (min-width: var(--breakpoint-md)) {
+  .container {
+    padding-left: var(--space-5);
+    padding-right: var(--space-5);
+    max-width: 720px;
+  }
+}
+
+/* Desktop */
+@media (min-width: var(--breakpoint-lg)) {
+  .container {
+    padding-left: var(--space-6);
+    padding-right: var(--space-6);
+    max-width: 960px;
+  }
+}
+
+/* Large Desktop */
+@media (min-width: var(--breakpoint-xl)) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+/* -----------------------------------------------------------------------
+   Sections
+   ----------------------------------------------------------------------- */
+.section {
+  padding: var(--space-6) 0;
+}
+
+/* Tablet */
+@media (min-width: var(--breakpoint-md)) {
+  .section {
+    padding: var(--space-7) 0;
+  }
+}
+
+/* Desktop */
+@media (min-width: var(--breakpoint-lg)) {
+  .section {
+    padding: var(--space-8) 0;
+  }
+}
+
+/* Section backgrounds */
+.section--alternate {
+  background-color: var(--color-background-alt);
+}
+
+.section--surface {
+  background-color: var(--color-surface);
+}
+
+/* -----------------------------------------------------------------------
+   Grid System
+   ----------------------------------------------------------------------- */
+.grid {
+  display: grid;
+  gap: var(--space-4);
+}
+
+/* Responsive grid columns */
+.grid--2-cols {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: var(--breakpoint-md)) {
+  .grid--2-cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.grid--3-cols {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: var(--breakpoint-md)) {
+  .grid--3-cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: var(--breakpoint-lg)) {
+  .grid--3-cols {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.grid--4-cols {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: var(--breakpoint-md)) {
+  .grid--4-cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: var(--breakpoint-lg)) {
+  .grid--4-cols {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* -----------------------------------------------------------------------
+   Flexbox Utilities
+   ----------------------------------------------------------------------- */
+.flex {
+  display: flex;
+}
+
+.flex--column {
+  flex-direction: column;
+}
+
+@media (min-width: var(--breakpoint-md)) {
+  .flex--column\@md {
+    flex-direction: column;
+  }
+}
+
+.flex--row {
+  flex-direction: row;
+}
+
+.flex--wrap {
+  flex-wrap: wrap;
+}
+
+.flex--center {
+  justify-content: center;
+  align-items: center;
+}
+
+.flex--between {
+  justify-content: space-between;
+}
+
+.flex--gap-2 {
+  gap: var(--space-2);
+}
+
+.flex--gap-4 {
+  gap: var(--space-4);
+}
+
+/* -----------------------------------------------------------------------
+   Header Layout
+   ----------------------------------------------------------------------- */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+  background-color: var(--color-background);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-3) 0;
+}
+
+/* -----------------------------------------------------------------------
+   Footer Layout
+   ----------------------------------------------------------------------- */
+.footer {
+  background-color: var(--color-text);
+  color: var(--color-text-inverse);
+  padding: var(--space-6) 0;
+  margin-top: var(--space-8);
+}
+
+/* -----------------------------------------------------------------------
+   Spacing Utilities
+   ----------------------------------------------------------------------- */
+/* Margin utilities */
+.mt-2 { margin-top: var(--space-2); }
+.mt-4 { margin-top: var(--space-4); }
+.mt-6 { margin-top: var(--space-6); }
+.mb-2 { margin-bottom: var(--space-2); }
+.mb-4 { margin-bottom: var(--space-4); }
+.mb-6 { margin-bottom: var(--space-6); }
+
+/* Padding utilities */
+.p-2 { padding: var(--space-2); }
+.p-4 { padding: var(--space-4); }
+.p-6 { padding: var(--space-6); }

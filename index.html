@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal Portfolio Website - Showcase of professional background, skills, and experience">
+  <meta name="author" content="Your Name">
+  <title>Your Name - Portfolio</title>
+  
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  
+  <!-- Favicon (add your favicon later) -->
+  <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <!-- Skip to content link for accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <!-- Header and Navigation -->
+  <header class="header" role="banner">
+    <div class="container">
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a href="#" class="nav__brand">Your Name</a>
+        
+        <button class="nav__toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span>☰</span>
+        </button>
+        
+        <ul class="nav__list">
+          <li><a href="#bio" class="nav__link" data-section="bio">Bio</a></li>
+          <li><a href="#skills" class="nav__link" data-section="skills">Skills</a></li>
+          <li><a href="#experience" class="nav__link" data-section="experience">Experience</a></li>
+          <li><a href="#contact" class="nav__link" data-section="contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- Main Content -->
+  <main id="main-content" role="main">
+    
+    <!-- Bio Section -->
+    <section id="bio" class="section" aria-labelledby="bio-heading" data-section>
+      <div class="container">
+        <div class="bio">
+          <!-- Profile Image - Replace with your actual image -->
+          <img 
+            src="assets/images/profile-placeholder.svg" 
+            alt="Profile photo of Your Name" 
+            class="bio__image"
+            width="200" 
+            height="200"
+          >
+          
+          <div class="bio__content">
+            <h1 id="bio-heading" class="bio__name">Your Name</h1>
+            <p class="bio__title">Software Developer | Web Developer | Problem Solver</p>
+            <div class="bio__description">
+              <p>
+                Hello! I'm a passionate software developer with a focus on creating clean, 
+                efficient, and user-friendly web applications. I enjoy turning complex problems 
+                into simple, beautiful, and intuitive solutions.
+              </p>
+              <p>
+                With expertise in modern web technologies and a commitment to writing 
+                maintainable code, I strive to build applications that not only meet 
+                business requirements but also provide exceptional user experiences.
+              </p>
+              <p>
+                When I'm not coding, you can find me exploring new technologies, contributing 
+                to open-source projects, or sharing knowledge with the developer community.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section id="skills" class="section section--alternate" aria-labelledby="skills-heading" data-section>
+      <div class="container">
+        <div class="section-heading">
+          <h2 id="skills-heading" class="section-heading__title">Skills & Expertise</h2>
+          <p class="section-heading__subtitle">
+            A collection of technologies and tools I work with
+          </p>
+        </div>
+        
+        <div class="skills-grid grid--4-cols">
+          <!-- Technical Skills -->
+          <div class="skill-card" data-category="technical">
+            <div class="skill-card__name">HTML5</div>
+            <div class="skill-card__level">Advanced</div>
+          </div>
+          
+          <div class="skill-card" data-category="technical">
+            <div class="skill-card__name">CSS3</div>
+            <div class="skill-card__level">Advanced</div>
+          </div>
+          
+          <div class="skill-card" data-category="technical">
+            <div class="skill-card__name">JavaScript</div>
+            <div class="skill-card__level">Advanced</div>
+          </div>
+          
+          <div class="skill-card" data-category="technical">
+            <div class="skill-card__name">TypeScript</div>
+            <div class="skill-card__level">Intermediate</div>
+          </div>
+          
+          <div class="skill-card" data-category="technical">
+            <div class="skill-card__name">React</div>
+            <div class="skill-card__level">Intermediate</div>
+          </div>
+          
+          <div class="skill-card" data-category="technical">
+            <div class="skill-card__name">Node.js</div>
+            <div class="skill-card__level">Intermediate</div>
+          </div>
+          
+          <div class="skill-card" data-category="technical">
+            <div class="skill-card__name">Git</div>
+            <div class="skill-card__level">Advanced</div>
+          </div>
+          
+          <div class="skill-card" data-category="technical">
+            <div class="skill-card__name">Responsive Design</div>
+            <div class="skill-card__level">Advanced</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Experience Section -->
+    <section id="experience" class="section" aria-labelledby="experience-heading" data-section>
+      <div class="container">
+        <div class="section-heading">
+          <h2 id="experience-heading" class="section-heading__title">Work Experience</h2>
+          <p class="section-heading__subtitle">
+            My professional journey and career highlights
+          </p>
+        </div>
+        
+        <div class="experience-timeline">
+          <!-- Experience Item 1 (Most Recent) -->
+          <article class="experience-item">
+            <header class="experience-item__header">
+              <h3 class="experience-item__title">Software Developer</h3>
+              <p class="experience-item__company">Company Name</p>
+              <p class="experience-item__date">January 2023 - Present</p>
+              <p class="experience-item__location">Remote</p>
+            </header>
+            
+            <div class="experience-item__description">
+              <p>
+                Developing and maintaining web applications using modern technologies. 
+                Collaborating with cross-functional teams to deliver high-quality solutions.
+              </p>
+            </div>
+            
+            <ul class="experience-item__achievements">
+              <li>Reduced page load time by 40% through optimization techniques</li>
+              <li>Implemented responsive design patterns improving mobile user experience</li>
+              <li>Collaborated with UX designers to create intuitive user interfaces</li>
+              <li>Mentored junior developers and conducted code reviews</li>
+            </ul>
+          </article>
+          
+          <!-- Experience Item 2 -->
+          <article class="experience-item">
+            <header class="experience-item__header">
+              <h3 class="experience-item__title">Junior Developer</h3>
+              <p class="experience-item__company">Previous Company</p>
+              <p class="experience-item__date">June 2021 - December 2022</p>
+              <p class="experience-item__location">City, Country</p>
+            </header>
+            
+            <div class="experience-item__description">
+              <p>
+                Worked on frontend development for client projects. Built responsive websites 
+                and web applications using HTML, CSS, and JavaScript.
+              </p>
+            </div>
+            
+            <ul class="experience-item__achievements">
+              <li>Developed 15+ responsive websites for diverse clients</li>
+              <li>Improved website accessibility scores to WCAG AA standards</li>
+              <li>Integrated third-party APIs and services</li>
+            </ul>
+          </article>
+          
+          <!-- Experience Item 3 -->
+          <article class="experience-item">
+            <header class="experience-item__header">
+              <h3 class="experience-item__title">Web Development Intern</h3>
+              <p class="experience-item__company">Startup Company</p>
+              <p class="experience-item__date">January 2021 - May 2021</p>
+              <p class="experience-item__location">City, Country</p>
+            </header>
+            
+            <div class="experience-item__description">
+              <p>
+                Assisted in developing and maintaining company website. Learned industry 
+                best practices and agile development methodologies.
+              </p>
+            </div>
+            
+            <ul class="experience-item__achievements">
+              <li>Built reusable UI components for the design system</li>
+              <li>Participated in daily standups and sprint planning</li>
+              <li>Fixed bugs and implemented feature requests</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="section section--alternate" aria-labelledby="contact-heading" data-section>
+      <div class="container">
+        <div class="section-heading">
+          <h2 id="contact-heading" class="section-heading__title">Get In Touch</h2>
+          <p class="section-heading__subtitle">
+            Let's connect and discuss potential opportunities
+          </p>
+        </div>
+        
+        <div class="contact-grid">
+          <!-- Email -->
+          <a href="mailto:your.email@example.com" class="contact-link">
+            <span class="contact-link__icon">📧</span>
+            <span class="contact-link__text">
+              <span class="contact-link__label">Email</span>
+              <span class="contact-link__value">your.email@example.com</span>
+            </span>
+          </a>
+          
+          <!-- LinkedIn -->
+          <a 
+            href="https://linkedin.com/in/yourprofile" 
+            class="contact-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="contact-link__icon">💼</span>
+            <span class="contact-link__text">
+              <span class="contact-link__label">LinkedIn</span>
+              <span class="contact-link__value">View Profile</span>
+            </span>
+          </a>
+          
+          <!-- GitHub -->
+          <a 
+            href="https://github.com/yourusername" 
+            class="contact-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="contact-link__icon">🐙</span>
+            <span class="contact-link__text">
+              <span class="contact-link__label">GitHub</span>
+              <span class="contact-link__value">View Repositories</span>
+            </span>
+          </a>
+          
+          <!-- Location -->
+          <div class="contact-link">
+            <span class="contact-link__icon">📍</span>
+            <span class="contact-link__text">
+              <span class="contact-link__label">Location</span>
+              <span class="contact-link__value">City, Country</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+  </main>
+  
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__copyright">
+          <p>&copy; 2026 Your Name. All rights reserved.</p>
+        </div>
+        
+        <ul class="social-links">
+          <li>
+            <a 
+              href="https://linkedin.com/in/yourprofile" 
+              class="social-links__link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              💼
+            </a>
+          </li>
+          <li>
+            <a 
+              href="https://github.com/yourusername" 
+              class="social-links__link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+            >
+              🐙
+            </a>
+          </li>
+          <li>
+            <a 
+              href="mailto:your.email@example.com" 
+              class="social-links__link"
+              aria-label="Email"
+            >
+              📧
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- JavaScript Files -->
+  <script src="js/main.js" defer></script>
+</body>
+</html>

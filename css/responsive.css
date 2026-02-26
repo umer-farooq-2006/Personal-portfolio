@@ -1,0 +1,193 @@
+/* ==========================================================================
+   Responsive Design - Mobile First Media Queries
+   ========================================================================== */
+
+/* -----------------------------------------------------------------------
+   Small Devices Up (640px)
+   ----------------------------------------------------------------------- */
+@media (min-width: var(--breakpoint-sm)) {
+  /* Typography adjustments */
+  h1 {
+    font-size: var(--font-size-5xl);
+  }
+  
+  /* Container adjustments */
+  .container {
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
+  }
+}
+
+/* -----------------------------------------------------------------------
+   Medium Devices Up - Tablets (768px)
+   ----------------------------------------------------------------------- */
+@media (min-width: var(--breakpoint-md)) {
+  /* Navigation */
+  .nav {
+    flex-wrap: nowrap;
+  }
+  
+  /* Bio section */
+  .bio {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+  }
+  
+  .bio__image {
+    width: 250px;
+    height: 250px;
+    flex-shrink: 0;
+  }
+  
+  .bio__content {
+    flex: 1;
+  }
+  
+  /* Skills grid */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+  }
+  
+  /* Experience timeline */
+  .experience-timeline {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Contact section */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  /* Footer layout */
+  .footer__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+  }
+}
+
+/* -----------------------------------------------------------------------
+   Large Devices Up - Desktops (1024px)
+   ----------------------------------------------------------------------- */
+@media (min-width: var(--breakpoint-lg)) {
+  /* Skills grid - 3 columns */
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  /* Experience timeline enhancements */
+  .experience-item {
+    padding-left: var(--space-8);
+  }
+  
+  .experience-item::before {
+    left: -11px;
+    width: 20px;
+    height: 20px;
+  }
+  
+  /* Contact grid - 2 columns with better spacing */
+  .contact-grid {
+    gap: var(--space-6);
+  }
+  
+  /* Section padding */
+  .section {
+    padding: var(--space-8) 0;
+  }
+}
+
+/* -----------------------------------------------------------------------
+   Extra Large Devices Up - Large Desktops (1280px)
+   ----------------------------------------------------------------------- */
+@media (min-width: var(--breakpoint-xl)) {
+  /* Skills grid - 4 columns */
+  .skills-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  /* Maximum content width */
+  .bio__content {
+    max-width: 800px;
+  }
+  
+  .section-heading__subtitle {
+    max-width: 700px;
+  }
+}
+
+/* -----------------------------------------------------------------------
+   Extra Extra Large Devices Up (1536px)
+   ----------------------------------------------------------------------- */
+@media (min-width: var(--breakpoint-2xl)) {
+  /* Fine-tune spacing for very large screens */
+  .container {
+    padding-left: var(--space-8);
+    padding-right: var(--space-8);
+  }
+}
+
+/* -----------------------------------------------------------------------
+   Print Styles
+   ----------------------------------------------------------------------- */
+@media print {
+  /* Hide navigation and interactive elements */
+  .nav,
+  .nav__toggle,
+  .skip-link,
+  .btn,
+  .social-links {
+    display: none !important;
+  }
+  
+  /* Reset colors for printing */
+  body {
+    background: white;
+    color: black;
+  }
+  
+  /* Ensure readable text */
+  a {
+    text-decoration: underline;
+  }
+  
+  a[href]::after {
+    content: ' (' attr(href) ')';
+  }
+  
+  /* Remove shadows and effects */
+  .card,
+  .skill-card {
+    box-shadow: none;
+    transform: none;
+  }
+  
+  /* Page breaks */
+  .section {
+    page-break-inside: avoid;
+  }
+}
+
+/* -----------------------------------------------------------------------
+   Reduced Motion
+   ----------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

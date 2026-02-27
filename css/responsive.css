@@ -3,51 +3,315 @@
    ========================================================================== */
 
 /* -----------------------------------------------------------------------
-   Small Devices Up (640px)
+   Base Styles (320px - Mobile First)
    ----------------------------------------------------------------------- */
-@media (min-width: var(--breakpoint-sm)) {
-  /* Typography adjustments */
-  h1 {
-    font-size: var(--font-size-5xl);
+
+/* Hero section - mobile optimized */
+.hero {
+  padding: var(--space-6) 0;
+}
+
+.hero__title {
+  font-size: var(--font-size-3xl);
+}
+
+.hero__subtitle {
+  font-size: var(--font-size-xl);
+}
+
+.hero__actions {
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero__actions .btn {
+  width: 100%;
+  max-width: 300px;
+}
+
+/* Breadcrumb - mobile */
+.breadcrumb__list {
+  flex-wrap: wrap;
+}
+
+/* Section headings - mobile */
+.section-heading__title {
+  font-size: var(--font-size-2xl);
+}
+
+/* Bio preview - mobile stack */
+.bio-preview {
+  grid-template-columns: 1fr;
+  text-align: center;
+}
+
+.bio-preview__image {
+  width: 200px;
+  height: 200px;
+}
+
+/* Skills preview - single column mobile */
+.skills-preview-grid {
+  grid-template-columns: 1fr;
+}
+
+/* Contact preview - single column mobile */
+.contact-preview-grid {
+  grid-template-columns: 1fr;
+}
+
+/* Experience preview - mobile */
+.experience-preview-item__header {
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+/* Error page - mobile */
+.error-code {
+  font-size: var(--font-size-5xl);
+}
+
+.error-actions {
+  flex-direction: column;
+  align-items: center;
+}
+
+.error-actions .btn {
+  width: 100%;
+  max-width: 300px;
+}
+
+.error-links__list {
+  grid-template-columns: 1fr;
+}
+
+/* -----------------------------------------------------------------------
+   Small Devices Up (576px) - Large Phones
+   ----------------------------------------------------------------------- */
+@media (min-width: 576px) {
+  .hero {
+    padding: var(--space-7) 0;
   }
-  
-  /* Container adjustments */
-  .container {
-    padding-left: var(--space-4);
-    padding-right: var(--space-4);
+
+  .hero__title {
+    font-size: var(--font-size-4xl);
+  }
+
+  .hero__subtitle {
+    font-size: var(--font-size-2xl);
+  }
+
+  .hero__actions {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .hero__actions .btn {
+    width: auto;
+  }
+
+  .bio-preview__image {
+    width: 250px;
+    height: 250px;
+  }
+
+  .skills-preview-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-preview-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .error-code {
+    font-size: var(--font-size-6xl);
   }
 }
 
 /* -----------------------------------------------------------------------
    Medium Devices Up - Tablets (768px)
    ----------------------------------------------------------------------- */
-@media (min-width: var(--breakpoint-md)) {
-  /* Navigation */
+@media (min-width: 768px) {
+  /* Navigation - desktop layout */
   .nav {
     flex-wrap: nowrap;
   }
-  
-  /* Bio section */
-  .bio {
-    flex-direction: row;
-    align-items: flex-start;
+
+  .nav__list {
+    display: flex;
+    gap: var(--space-4);
+  }
+
+  /* Hide mobile toggle on desktop */
+  .nav__toggle {
+    display: none;
+  }
+
+  /* Hero - desktop sizing */
+  .hero {
+    padding: var(--space-8) 0;
+  }
+
+  .hero__title {
+    font-size: var(--font-size-5xl);
+  }
+
+  .hero__subtitle {
+    font-size: var(--font-size-3xl);
+  }
+
+  /* Bio preview - side by side */
+  .bio-preview {
+    grid-template-columns: 1fr 2fr;
     text-align: left;
   }
-  
-  .bio__image {
-    width: 250px;
-    height: 250px;
-    flex-shrink: 0;
+
+  .bio-preview__image-container {
+    justify-content: flex-start;
   }
-  
-  .bio__content {
+
+  .bio-preview__image {
+    width: 300px;
+    height: 300px;
+  }
+
+  /* Skills preview - 3 columns */
+  .skills-preview-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Contact preview - 3 columns */
+  .contact-preview-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Experience preview - better layout */
+  .experience-preview-item__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .experience-preview-item__meta {
     flex: 1;
   }
-  
-  /* Skills grid */
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+
+  .experience-preview-item__time {
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  /* Error page - desktop */
+  .error-actions {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .error-actions .btn {
+    width: auto;
+  }
+
+  .error-links__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Section headings */
+  .section-heading__title {
+    font-size: var(--font-size-3xl);
+  }
+}
+
+/* -----------------------------------------------------------------------
+   Large Devices Up - Desktops (992px)
+   ----------------------------------------------------------------------- */
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+
+  .hero {
+    padding: var(--space-9) 0;
+  }
+
+  .hero__content {
+    max-width: 900px;
+  }
+
+  .hero__title {
+    font-size: var(--font-size-6xl);
+  }
+
+  .hero__subtitle {
+    font-size: var(--font-size-4xl);
+  }
+
+  .bio-preview__image {
+    width: 350px;
+    height: 350px;
+  }
+
+  .section-heading__title {
+    font-size: var(--font-size-4xl);
+  }
+}
+
+/* -----------------------------------------------------------------------
+   Extra Large Devices Up (1200px)
+   ----------------------------------------------------------------------- */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+
+  .hero {
+    padding: var(--space-10) 0;
+  }
+
+  .hero__content {
+    max-width: 1000px;
+  }
+
+  .hero__title {
+    font-size: var(--font-size-7xl);
+  }
+
+  .hero__subtitle {
+    font-size: var(--font-size-5xl);
+  }
+
+  .bio-preview__image {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+/* -----------------------------------------------------------------------
+   2X Large Devices (1920px+)
+   ----------------------------------------------------------------------- */
+@media (min-width: 1920px) {
+  :root {
+    /* Scale up base font size for very large screens */
+    font-size: 112.5%; /* 18px base */
+  }
+
+  .container {
+    max-width: 1600px;
+  }
+
+  .hero {
+    padding: var(--space-12) 0;
+  }
+
+  .hero__content {
+    max-width: 1200px;
+  }
+
+  /* Ensure images and content scale appropriately */
+  .bio-preview__image {
+    width: 500px;
+    height: 500px;
+  }
+}
     gap: var(--space-4);
   }
   

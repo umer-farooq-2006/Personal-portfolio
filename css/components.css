@@ -590,55 +590,6 @@
 }
 
 /* -----------------------------------------------------------------------
-   Social Links - Animated Icons
-   ----------------------------------------------------------------------- */
-.social-links {
-  display: flex;
-  gap: var(--space-3);
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.social-links__link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: var(--radius-xl);
-  color: var(--color-text-inverse);
-  font-size: var(--font-size-xl);
-  transition: all var(--transition-base);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  text-decoration: none;
-  position: relative;
-  overflow: hidden;
-}
-
-.social-links__link::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: var(--gradient-primary);
-  opacity: 0;
-  transition: opacity var(--transition-base);
-}
-
-.social-links__link:hover {
-  transform: translateY(-4px) scale(1.05);
-  box-shadow: var(--shadow-lg);
-  color: var(--color-text-inverse);
-  border-color: transparent;
-  text-decoration: none;
-}
-
-.social-links__link:hover::before {
-  opacity: 1;
-}
-
-/* -----------------------------------------------------------------------
    Section Headings - Premium Typography
    ----------------------------------------------------------------------- */
 .section-heading {

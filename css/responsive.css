@@ -97,6 +97,44 @@
   font-size: var(--font-size-xl);
 }
 
+/* Footer responsive styles */
+.footer {
+  padding: var(--space-10) 0 var(--space-6);
+  margin-top: var(--space-12);
+}
+
+.footer__main {
+  text-align: center;
+}
+
+.footer__brand {
+  align-items: center;
+}
+
+.footer__social {
+  align-items: center;
+}
+
+.footer__social-links {
+  justify-content: center;
+}
+
+.footer__bottom {
+  flex-direction: column;
+  gap: var(--space-3);
+  text-align: center;
+}
+
+.footer__legal {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-4);
+}
+
+.footer__legal li + li::before {
+  display: none;
+}
+
 /* Card padding on mobile */
 .card {
   padding: var(--space-5);
@@ -409,7 +447,8 @@
   .nav__toggle,
   .skip-link,
   .btn,
-  .social-links,
+  .footer__social,
+  .footer__legal,
   .header,
   .footer,
   .breadcrumb {

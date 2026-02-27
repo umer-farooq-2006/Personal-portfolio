@@ -1,73 +1,98 @@
 /* ==========================================================================
-   Accessibility Styles
+   Accessibility Styles - Modern & Inclusive
    ========================================================================== */
 
 /* -----------------------------------------------------------------------
-   Skip Links
+   Skip Links - Enhanced Visibility
    ----------------------------------------------------------------------- */
 .skip-link {
   position: absolute;
-  top: -100%;
-  left: 50%;
-  transform: translateX(-50%);
+  top: -100px;
+  left: var(--space-4);
   background: var(--color-primary);
   color: var(--color-text-inverse);
   padding: var(--space-3) var(--space-4);
   text-decoration: none;
-  font-weight: var(--font-weight-medium);
-  border-radius: 0 0 var(--radius-md) var(--radius-md);
-  z-index: 9999;
-  transition: top var(--transition-fast);
+  font-weight: var(--font-weight-semibold);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  z-index: var(--z-tooltip);
+  transition: all var(--transition-fast);
 }
 
 .skip-link:focus {
-  top: 0;
+  top: var(--space-4);
   outline: 3px solid var(--color-accent);
   outline-offset: 2px;
+  transform: translateY(2px);
 }
 
 /* -----------------------------------------------------------------------
-   Focus Styles
+   Focus Styles - Clear & Beautiful
    ----------------------------------------------------------------------- */
 
-/* Global focus style */
-:focus {
+/* Global focus-visible style (keyboard only) */
+:focus-visible {
   outline: 3px solid var(--color-primary);
-  outline-offset: 2px;
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
 }
 
-/* Remove default outline for non-keyboard focus */
+/* Remove default outline for mouse users */
 :focus:not(:focus-visible) {
   outline: none;
 }
 
-/* Visible focus for keyboard navigation */
-:focus-visible {
-  outline: 3px solid var(--color-primary);
-  outline-offset: 2px;
-}
-
 /* Enhanced focus for interactive elements */
 a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-select:focus-visible,
-textarea:focus-visible,
-[tabindex]:focus-visible {
+button:focus-visible {
   outline: 3px solid var(--color-primary);
   outline-offset: 3px;
-  box-shadow: 0 0 0 6px rgba(37, 99, 235, 0.2);
+  box-shadow: 0 0 0 6px rgba(59, 130, 246, 0.25);
 }
 
-/* Focus within for composite widgets */
-.nav:focus-within,
-.contact-grid:focus-within,
-.skills-grid:focus-within {
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+/* Form input focus */
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 0;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+}
+
+/* Card focus */
+.card:focus-visible,
+.skill-card:focus-visible,
+.contact-link:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 3px;
+  box-shadow: var(--shadow-lg), 0 0 0 6px rgba(59, 130, 246, 0.2);
+}
+
+/* Navigation link focus */
+.nav__link:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  background: rgba(59, 130, 246, 0.1);
+}
+
+/* Button focus */
+.btn:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px rgba(59, 130, 246, 0.3);
+}
+
+/* Social link focus */
+.social-links__link:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px rgba(245, 158, 11, 0.3);
 }
 
 /* -----------------------------------------------------------------------
-   Reduced Motion
+   Reduced Motion Support
    ----------------------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -78,6 +103,14 @@ textarea:focus-visible,
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+  
+  /* Keep essential hover states but without transforms */
+  .btn:hover,
+  .card:hover,
+  .skill-card:hover,
+  .experience-item:hover {
+    transform: none;
+  }
 }
 
 /* -----------------------------------------------------------------------
@@ -85,16 +118,39 @@ textarea:focus-visible,
    ----------------------------------------------------------------------- */
 @media (prefers-contrast: high) {
   :root {
-    --color-primary: #0000ff;
+    --color-primary: #0066cc;
     --color-text: #000000;
     --color-background: #ffffff;
     --color-border: #000000;
+    --color-text-muted: #333333;
   }
 
-  .nav__link,
+  /* Increase border contrast */
+  .card,
+  .skill-card,
+  .experience-item,
   .contact-link,
-  .btn {
+  .form-input {
+    border-width: 2px;
+    border-color: #000000;
+  }
+
+  /* Ensure buttons have clear borders */
+  .btn--primary,
+  .btn--secondary {
     border: 2px solid currentColor;
+  }
+
+  /* Links should be underlined */
+  a {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+  }
+
+  /* Focus rings more visible */
+  :focus-visible {
+    outline: 3px solid #000000;
+    outline-offset: 3px;
   }
 }
 
@@ -113,7 +169,7 @@ textarea:focus-visible,
   border: 0;
 }
 
-/* Make sr-only content visible when focused (for skip links) */
+/* Make sr-only content visible when focused */
 .sr-only:focus,
 .sr-only:active {
   position: static;
@@ -127,26 +183,32 @@ textarea:focus-visible,
 }
 
 /* -----------------------------------------------------------------------
-   Touch Target Sizes
+   Touch Target Sizes - WCAG 2.1 AAA
    ----------------------------------------------------------------------- */
 .nav__link,
 .btn,
 .contact-link,
 .social-links__link,
-.nav__toggle {
-  min-height: 44px;
-  min-width: 44px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: var(--space-2) var(--space-3);
+.nav__toggle,
+.form-input,
+select,
+textarea {
+  min-height: 48px;
+  min-width: 48px;
+}
+
+/* Ensure clickable areas are large enough */
+.contact-link,
+.skill-card,
+.card {
+  min-height: 60px;
 }
 
 /* -----------------------------------------------------------------------
-   Text Resizing Support
+   Text Resizing Support - Up to 200%
    ----------------------------------------------------------------------- */
 
-/* Ensure text remains readable at 200% zoom */
+/* Base font size respects user preferences */
 html {
   font-size: 100%;
   -webkit-text-size-adjust: 100%;
@@ -154,102 +216,131 @@ html {
   text-size-adjust: 100%;
 }
 
-/* Prevent text truncation at large sizes */
+/* Text should wrap properly at large sizes */
 p,
 h1,
 h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+span,
+a,
+li {
   word-wrap: break-word;
   overflow-wrap: break-word;
   max-width: 100%;
+  hyphens: auto;
+}
+
+/* Ensure line height is adequate for larger text */
+@media (min-width: 768px) {
+  body {
+    line-height: var(--line-height-relaxed);
+  }
 }
 
 /* -----------------------------------------------------------------------
    Keyboard Navigation Indicators
    ----------------------------------------------------------------------- */
 
-/* Visible focus for navigation */
+/* Active navigation link - clear visual indicator */
 .nav__link--active {
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-semibold);
   color: var(--color-primary);
+  background: rgba(59, 130, 246, 0.08);
+  border-radius: var(--radius-md);
 }
 
-.nav__link--active::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--color-primary);
-}
-
-/* Mobile menu focus states */
+/* Mobile menu toggle focus */
 .nav__toggle:focus-visible {
   outline: 3px solid var(--color-primary);
-  outline-offset: 3px;
-  background: rgba(37, 99, 235, 0.1);
+  outline-offset: 2px;
+  background: rgba(59, 130, 246, 0.15);
 }
 
 /* -----------------------------------------------------------------------
    Form Accessibility
    ----------------------------------------------------------------------- */
 
-/* Required field indicators */
+/* Required field indicator - visible and clear */
 label[for] .required,
 .form-label .required {
-  color: var(--color-primary);
+  color: var(--color-error);
   margin-left: var(--space-1);
+  font-weight: var(--font-weight-bold);
 }
 
-/* Error states with proper contrast */
+/* Invalid form input states */
 .form-input:invalid,
-.form-input.error {
-  border-color: #dc2626;
+.form-input[aria-invalid="true"] {
+  border-color: var(--color-error);
   border-width: 2px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23ef4444' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='8' x2='12' y2='12'%3E%3C/line%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'%3E%3C/line%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--space-3) center;
+  padding-right: var(--space-10);
 }
 
 .form-input:invalid:focus,
-.form-input.error:focus {
-  border-color: #dc2626;
-  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.2);
+.form-input[aria-invalid="true"]:focus {
+  border-color: var(--color-error);
+  box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.2);
 }
 
-/* Error messages with role="alert" */
+/* Error messages with proper contrast */
 .form-error {
-  color: #dc2626;
-  font-weight: var(--font-weight-medium);
+  color: var(--color-error-dark);
+  font-weight: var(--font-weight-semibold);
   margin-top: var(--space-2);
   display: block;
+  font-size: var(--font-size-sm);
+}
+
+/* Success states */
+.form-input:valid:not(:placeholder-shown) {
+  border-color: var(--color-success);
 }
 
 /* -----------------------------------------------------------------------
    Link Distinguishability
    ----------------------------------------------------------------------- */
 
-/* Ensure links are distinguishable without relying solely on color */
+/* Links should be distinguishable without relying solely on color */
 a {
+  color: var(--color-text-link);
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
+  transition: text-decoration-thickness var(--transition-fast);
 }
 
 a:hover {
   text-decoration-thickness: 2px;
+  color: var(--color-primary);
 }
 
-/* Links in navigation - use multiple indicators */
+/* Navigation links use different indicators */
 .nav__link {
   text-decoration: none;
+  position: relative;
 }
 
-.nav__link:hover,
-.nav__link:focus {
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
+.nav__link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--gradient-primary);
+  transform: translateX(-50%);
+  transition: width var(--transition-base);
+}
+
+.nav__link:hover::after,
+.nav__link:focus-visible::after {
+  width: 80%;
 }
 
 /* -----------------------------------------------------------------------
@@ -263,8 +354,134 @@ img {
   display: block;
 }
 
-/* Decorative images should be hidden from screen readers */
+/* Decorative images hidden from screen readers */
 img[alt=""],
-img[role="presentation"] {
+img[role="presentation"],
+img[aria-hidden="true"] {
   pointer-events: none;
+}
+
+/* Profile images should have good focus treatment */
+.bio__image,
+.bio-preview__image {
+  transition: transform var(--transition-slow);
+}
+
+.bio__image:hover,
+.bio-preview__image:hover {
+  transform: scale(1.05);
+}
+
+/* -----------------------------------------------------------------------
+   Color Contrast Compliance
+   ----------------------------------------------------------------------- */
+
+/* Ensure text has sufficient contrast */
+p,
+li,
+span {
+  color: var(--color-text-secondary);
+}
+
+/* Headings have high contrast */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-text-primary);
+}
+
+/* Muted text still meets WCAG AA */
+.text-muted,
+.section-heading__subtitle,
+.form-help {
+  color: var(--color-text-muted);
+}
+
+/* -----------------------------------------------------------------------
+   Animation Accessibility
+   ----------------------------------------------------------------------- */
+
+/* Respect user preference for no animations */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal--left,
+  .reveal--right,
+  .reveal--scale {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  
+  .hero__content {
+    animation: none;
+  }
+  
+  .error-code {
+    animation: none;
+  }
+}
+
+/* -----------------------------------------------------------------------
+   Focus Trap Prevention
+   ----------------------------------------------------------------------- */
+
+/* Ensure modal dialogs trap focus properly (future use) */
+[role="dialog"][aria-modal="true"] {
+  outline: none;
+}
+
+/* -----------------------------------------------------------------------
+   Live Regions
+   ----------------------------------------------------------------------- */
+
+/* Form success/error messages */
+[role="status"],
+[role="alert"] {
+  font-weight: var(--font-weight-medium);
+}
+
+[role="alert"] {
+  color: var(--color-error-dark);
+}
+
+[role="status"] {
+  color: var(--color-success-dark);
+}
+
+/* -----------------------------------------------------------------------
+   Print Accessibility
+   ----------------------------------------------------------------------- */
+@media print {
+  /* Remove interactive elements */
+  .skip-link,
+  .nav__toggle,
+  .btn,
+  .social-links {
+    display: none !important;
+  }
+
+  /* Ensure links are identifiable */
+  a {
+    text-decoration: underline;
+    color: #000000;
+  }
+
+  a[href]::after {
+    content: ' (' attr(href) ')';
+  }
+
+  /* High contrast for print */
+  body {
+    background: white;
+    color: black;
+  }
+
+  /* Remove shadows and effects */
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
 }

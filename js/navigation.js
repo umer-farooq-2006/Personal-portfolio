@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Navigation Module - Personal Portfolio Website
+   Navigation Module - Personal Portfolio Website (Enhanced)
    ========================================================================== */
 
 'use strict';
@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initActivePageIndicator();
   initKeyboardNavigation();
+  initNavScrollEffect();
 });
 
 /* ==========================================================================
@@ -87,7 +88,7 @@ function toggleMobileMenu() {
   if (!navToggle || !navList) return;
 
   const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
-  
+
   if (isExpanded) {
     closeMobileMenu();
   } else {
@@ -96,7 +97,7 @@ function toggleMobileMenu() {
 }
 
 /**
- * Open mobile menu
+ * Open mobile menu with animation
  */
 function openMobileMenu() {
   const navToggle = document.querySelector('.nav__toggle');
@@ -107,6 +108,20 @@ function openMobileMenu() {
   navToggle.setAttribute('aria-expanded', 'true');
   navList.classList.add('nav__list--open');
   document.body.style.overflow = 'hidden';
+  
+  // Animate nav items
+  const navLinks = navList.querySelectorAll('.nav__link');
+  navLinks.forEach((link, index) => {
+    link.style.opacity = '0';
+    link.style.transform = 'translateX(-10px)';
+    link.style.transition = 'all 0.3s ease';
+    link.style.transitionDelay = `${index * 50}ms`;
+    
+    setTimeout(() => {
+      link.style.opacity = '1';
+      link.style.transform = 'translateX(0)';
+    }, 100 + (index * 50));
+  });
 }
 
 /**
@@ -137,7 +152,7 @@ function initActivePageIndicator() {
 
   navLinks.forEach(link => {
     const href = link.getAttribute('href');
-    
+
     // Remove any existing active state
     link.classList.remove('nav__link--active');
     link.removeAttribute('aria-current');
@@ -208,6 +223,42 @@ function initKeyboardNavigation() {
 }
 
 /* ==========================================================================
+   Header Scroll Effect
+   ========================================================================== */
+
+/**
+ * Add subtle background change to header on scroll
+ */
+function initNavScrollEffect() {
+  const header = document.querySelector('.header');
+  
+  if (!header) return;
+
+  let lastScroll = 0;
+  let ticking = false;
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        const currentScroll = window.pageYOffset;
+        
+        // Add/remove scrolled class based on scroll position
+        if (currentScroll > 50) {
+          header.classList.add('header--scrolled');
+        } else {
+          header.classList.remove('header--scrolled');
+        }
+        
+        lastScroll = currentScroll;
+        ticking = false;
+      });
+      
+      ticking = true;
+    }
+  });
+}
+
+/* ==========================================================================
    Utility Functions (exported for use in main.js)
    ========================================================================== */
 
@@ -226,4 +277,23 @@ function getCurrentPage() {
 function isMenuOpen() {
   const navList = document.querySelector('.nav__list');
   return navList ? navList.classList.contains('nav__list--open') : false;
+}
+
+/**
+ * Smooth scroll to element
+ * @param {string} selector - CSS selector of element to scroll to
+ * @param {number} offset - Offset from top of viewport
+ */
+function scrollToElement(selector, offset = 0) {
+  const element = document.querySelector(selector);
+  
+  if (!element) return;
+
+  const elementPosition = element.getBoundingClientRect().top;
+  const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+  window.scrollTo({
+    top: offsetPosition,
+    behavior: 'smooth'
+  });
 }

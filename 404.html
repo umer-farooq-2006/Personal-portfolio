@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Page not found - The page you're looking for doesn't exist">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Page Not Found - 404 | Your Name Portfolio</title>
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/accessibility.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <!-- Skip to content link for accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header and Navigation -->
+  <header class="header" role="banner">
+    <div class="container">
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav__brand">Your Name</a>
+
+        <button class="nav__toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span>☰</span>
+        </button>
+
+        <ul class="nav__list">
+          <li><a href="bio.html" class="nav__link">Bio</a></li>
+          <li><a href="skills.html" class="nav__link">Skills</a></li>
+          <li><a href="experience.html" class="nav__link">Experience</a></li>
+          <li><a href="contact.html" class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content" role="main" class="error-page">
+    <div class="container">
+      <div class="error-content">
+        <!-- Error Code -->
+        <h1 class="error-code" aria-hidden="true">404</h1>
+        
+        <!-- Error Message -->
+        <div class="error-message">
+          <h2 class="error-title">Page Not Found</h2>
+          <p class="error-description">
+            Oops! The page you're looking for doesn't exist or has been moved.
+          </p>
+          <p class="error-suggestion">
+            Don't worry, you can always go back to the homepage or explore other sections of my portfolio.
+          </p>
+        </div>
+
+        <!-- Error Actions -->
+        <div class="error-actions">
+          <a href="index.html" class="btn btn--primary btn--large">
+            <span class="btn__icon" aria-hidden="true">🏠</span>
+            <span class="btn__text">Go Home</span>
+          </a>
+          <a href="contact.html" class="btn btn--secondary btn--large">
+            <span class="btn__icon" aria-hidden="true">📧</span>
+            <span class="btn__text">Contact Me</span>
+          </a>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="error-links">
+          <h3 class="error-links__heading">Or explore my portfolio:</h3>
+          <ul class="error-links__list">
+            <li><a href="bio.html">Learn about me</a></li>
+            <li><a href="skills.html">View my skills</a></li>
+            <li><a href="experience.html">See my experience</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__copyright">
+          <p>&copy; 2026 Your Name. All rights reserved.</p>
+        </div>
+
+        <ul class="social-links">
+          <li>
+            <a
+              href="https://linkedin.com/in/yourprofile"
+              class="social-links__link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              💼
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/yourusername"
+              class="social-links__link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+            >
+              🐙
+            </a>
+          </li>
+          <li>
+            <a
+              href="mailto:your.email@example.com"
+              class="social-links__link"
+              aria-label="Email"
+            >
+              📧
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript Files -->
+  <script src="js/main.js" defer></script>
+  <script src="js/navigation.js" defer></script>
+</body>
+</html>

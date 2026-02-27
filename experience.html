@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="My professional work experience, projects, and career journey">
+  <meta name="author" content="Your Name">
+  <title>Experience - Your Name | Portfolio</title>
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/accessibility.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <!-- Skip to content link for accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header and Navigation -->
+  <header class="header" role="banner">
+    <div class="container">
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav__brand">Your Name</a>
+
+        <button class="nav__toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span>☰</span>
+        </button>
+
+        <ul class="nav__list">
+          <li><a href="bio.html" class="nav__link">Bio</a></li>
+          <li><a href="skills.html" class="nav__link">Skills</a></li>
+          <li><a href="experience.html" class="nav__link" aria-current="page">Experience</a></li>
+          <li><a href="contact.html" class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Breadcrumb Navigation -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+      <ol class="breadcrumb__list">
+        <li><a href="index.html">Home</a></li>
+        <li><span aria-current="page">Experience</span></li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main id="main-content" role="main">
+
+    <!-- Hero Section -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="container">
+        <div class="hero__content">
+          <h1 id="hero-heading" class="hero__title">Work Experience</h1>
+          <p class="hero__subtitle">My professional journey and career highlights</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section" aria-labelledby="experience-heading">
+      <div class="container">
+        <div class="section-heading">
+          <h2 id="experience-heading" class="section-heading__title">Professional Experience</h2>
+          <p class="section-heading__subtitle">
+            A timeline of my work history and key achievements
+          </p>
+        </div>
+
+        <div class="experience-timeline">
+          <!-- Experience Item 1 (Most Recent) -->
+          <article class="experience-item">
+            <header class="experience-item__header">
+              <div class="experience-item__meta">
+                <h3 class="experience-item__title">Software Developer</h3>
+                <p class="experience-item__company">Company Name</p>
+              </div>
+              <div class="experience-item__time">
+                <p class="experience-item__date">January 2023 - Present</p>
+                <p class="experience-item__location">Remote</p>
+              </div>
+            </header>
+
+            <div class="experience-item__description">
+              <p>
+                Developing and maintaining web applications using modern technologies.
+                Collaborating with cross-functional teams to deliver high-quality solutions
+                that meet business requirements and provide exceptional user experiences.
+              </p>
+            </div>
+
+            <ul class="experience-item__achievements">
+              <li>Reduced page load time by 40% through optimization techniques</li>
+              <li>Implemented responsive design patterns improving mobile user experience</li>
+              <li>Collaborated with UX designers to create intuitive user interfaces</li>
+              <li>Mentored junior developers and conducted code reviews</li>
+              <li>Led migration from legacy system to modern architecture</li>
+            </ul>
+
+            <div class="experience-item__tags">
+              <span class="tag">JavaScript</span>
+              <span class="tag">React</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">CSS</span>
+            </div>
+          </article>
+
+          <!-- Experience Item 2 -->
+          <article class="experience-item">
+            <header class="experience-item__header">
+              <div class="experience-item__meta">
+                <h3 class="experience-item__title">Junior Developer</h3>
+                <p class="experience-item__company">Previous Company</p>
+              </div>
+              <div class="experience-item__time">
+                <p class="experience-item__date">June 2021 - December 2022</p>
+                <p class="experience-item__location">City, Country</p>
+              </div>
+            </header>
+
+            <div class="experience-item__description">
+              <p>
+                Worked on frontend development for client projects. Built responsive websites
+                and web applications using HTML, CSS, and JavaScript. Collaborated with designers
+                to implement pixel-perfect user interfaces.
+              </p>
+            </div>
+
+            <ul class="experience-item__achievements">
+              <li>Developed 15+ responsive websites for diverse clients</li>
+              <li>Improved website accessibility scores to WCAG AA standards</li>
+              <li>Integrated third-party APIs and services</li>
+              <li>Participated in agile development processes</li>
+            </ul>
+
+            <div class="experience-item__tags">
+              <span class="tag">HTML5</span>
+              <span class="tag">CSS3</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">jQuery</span>
+            </div>
+          </article>
+
+          <!-- Experience Item 3 -->
+          <article class="experience-item">
+            <header class="experience-item__header">
+              <div class="experience-item__meta">
+                <h3 class="experience-item__title">Web Development Intern</h3>
+                <p class="experience-item__company">Startup Company</p>
+              </div>
+              <div class="experience-item__time">
+                <p class="experience-item__date">January 2021 - May 2021</p>
+                <p class="experience-item__location">City, Country</p>
+              </div>
+            </header>
+
+            <div class="experience-item__description">
+              <p>
+                Assisted in developing and maintaining company website. Learned industry
+                best practices and agile development methodologies. Built reusable UI
+                components and fixed bugs across the codebase.
+              </p>
+            </div>
+
+            <ul class="experience-item__achievements">
+              <li>Built reusable UI components for the design system</li>
+              <li>Participated in daily standups and sprint planning</li>
+              <li>Fixed bugs and implemented feature requests</li>
+              <li>Created documentation for internal tools</li>
+            </ul>
+
+            <div class="experience-item__tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Git</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section (Optional) -->
+    <section class="section section--alternate" aria-labelledby="education-heading">
+      <div class="container">
+        <div class="section-heading">
+          <h2 id="education-heading" class="section-heading__title">Education</h2>
+        </div>
+
+        <div class="education-list">
+          <div class="education-item">
+            <h3 class="education-item__degree">Bachelor of Science in Computer Science</h3>
+            <p class="education-item__school">University Name</p>
+            <p class="education-item__date">Graduated: 2021</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__copyright">
+          <p>&copy; 2026 Your Name. All rights reserved.</p>
+        </div>
+
+        <ul class="social-links">
+          <li>
+            <a
+              href="https://linkedin.com/in/yourprofile"
+              class="social-links__link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              💼
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/yourusername"
+              class="social-links__link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+            >
+              🐙
+            </a>
+          </li>
+          <li>
+            <a
+              href="mailto:your.email@example.com"
+              class="social-links__link"
+              aria-label="Email"
+            >
+              📧
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript Files -->
+  <script src="js/main.js" defer></script>
+  <script src="js/navigation.js" defer></script>
+</body>
+</html>

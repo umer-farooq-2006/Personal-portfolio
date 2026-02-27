@@ -5,277 +5,212 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Personal Portfolio Website - Showcase of professional background, skills, and experience">
   <meta name="author" content="Your Name">
-  <title>Your Name - Portfolio</title>
-  
+  <title>Your Name - Portfolio | Home</title>
+
   <!-- CSS Files -->
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/responsive.css">
-  
-  <!-- Favicon (add your favicon later) -->
+  <link rel="stylesheet" href="css/accessibility.css">
+
+  <!-- Favicon -->
   <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon">
 </head>
 <body>
   <!-- Skip to content link for accessibility -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
-  
+
   <!-- Header and Navigation -->
   <header class="header" role="banner">
     <div class="container">
       <nav class="nav" role="navigation" aria-label="Main navigation">
-        <a href="#" class="nav__brand">Your Name</a>
-        
+        <a href="index.html" class="nav__brand">Your Name</a>
+
         <button class="nav__toggle" aria-label="Toggle navigation menu" aria-expanded="false">
           <span>☰</span>
         </button>
-        
+
         <ul class="nav__list">
-          <li><a href="#bio" class="nav__link" data-section="bio">Bio</a></li>
-          <li><a href="#skills" class="nav__link" data-section="skills">Skills</a></li>
-          <li><a href="#experience" class="nav__link" data-section="experience">Experience</a></li>
-          <li><a href="#contact" class="nav__link" data-section="contact">Contact</a></li>
+          <li><a href="bio.html" class="nav__link" aria-current="page">Bio</a></li>
+          <li><a href="skills.html" class="nav__link">Skills</a></li>
+          <li><a href="experience.html" class="nav__link">Experience</a></li>
+          <li><a href="contact.html" class="nav__link">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
-  
+
   <!-- Main Content -->
   <main id="main-content" role="main">
-    
-    <!-- Bio Section -->
-    <section id="bio" class="section" aria-labelledby="bio-heading" data-section>
+
+    <!-- Hero Section -->
+    <section class="hero" aria-labelledby="hero-heading">
       <div class="container">
-        <div class="bio">
-          <!-- Profile Image - Replace with your actual image -->
-          <img 
-            src="assets/images/profile-placeholder.svg" 
-            alt="Profile photo of Your Name" 
-            class="bio__image"
-            width="200" 
-            height="200"
-          >
-          
-          <div class="bio__content">
-            <h1 id="bio-heading" class="bio__name">Your Name</h1>
-            <p class="bio__title">Software Developer | Web Developer | Problem Solver</p>
-            <div class="bio__description">
-              <p>
-                Hello! I'm a passionate software developer with a focus on creating clean, 
-                efficient, and user-friendly web applications. I enjoy turning complex problems 
-                into simple, beautiful, and intuitive solutions.
-              </p>
-              <p>
-                With expertise in modern web technologies and a commitment to writing 
-                maintainable code, I strive to build applications that not only meet 
-                business requirements but also provide exceptional user experiences.
-              </p>
-              <p>
-                When I'm not coding, you can find me exploring new technologies, contributing 
-                to open-source projects, or sharing knowledge with the developer community.
-              </p>
-            </div>
+        <div class="hero__content">
+          <h1 id="hero-heading" class="hero__title">Your Name</h1>
+          <p class="hero__subtitle">Software Developer | Web Developer | Problem Solver</p>
+          <p class="hero__description">
+            Creating clean, efficient, and user-friendly web applications
+          </p>
+          <div class="hero__actions">
+            <a href="contact.html" class="btn btn--primary btn--large">Get In Touch</a>
+            <a href="experience.html" class="btn btn--secondary btn--large">View My Work</a>
           </div>
         </div>
       </div>
     </section>
-    
-    <!-- Skills Section -->
-    <section id="skills" class="section section--alternate" aria-labelledby="skills-heading" data-section>
+
+    <!-- Bio Preview Section -->
+    <section id="bio" class="section" aria-labelledby="bio-heading">
+      <div class="container">
+        <div class="section-heading">
+          <h2 id="bio-heading" class="section-heading__title">About Me</h2>
+          <p class="section-heading__subtitle">Get to know me better</p>
+        </div>
+        
+        <div class="bio-preview">
+          <!-- Profile Image -->
+          <div class="bio-preview__image-container">
+            <img
+              src="assets/images/profile-placeholder.svg"
+              alt="Profile photo of Your Name"
+              class="bio-preview__image"
+              width="300"
+              height="300"
+              loading="lazy"
+            >
+          </div>
+
+          <!-- Bio Content -->
+          <div class="bio-preview__content">
+            <p class="bio-preview__text">
+              Hello! I'm a passionate software developer with a focus on creating clean,
+              efficient, and user-friendly web applications. I enjoy turning complex problems
+              into simple, beautiful, and intuitive solutions.
+            </p>
+            <p class="bio-preview__text">
+              With expertise in modern web technologies and a commitment to writing
+              maintainable code, I strive to build applications that not only meet
+              business requirements but also provide exceptional user experiences.
+            </p>
+            <a href="bio.html" class="btn btn--primary">Learn More About Me</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Preview Section -->
+    <section id="skills" class="section section--alternate" aria-labelledby="skills-heading">
       <div class="container">
         <div class="section-heading">
           <h2 id="skills-heading" class="section-heading__title">Skills & Expertise</h2>
-          <p class="section-heading__subtitle">
-            A collection of technologies and tools I work with
-          </p>
+          <p class="section-heading__subtitle">Technologies I work with</p>
         </div>
-        
-        <div class="skills-grid grid--4-cols">
-          <!-- Technical Skills -->
-          <div class="skill-card" data-category="technical">
-            <div class="skill-card__name">HTML5</div>
-            <div class="skill-card__level">Advanced</div>
+
+        <div class="skills-preview-grid grid--3-cols">
+          <div class="skill-preview-card">
+            <div class="skill-preview-card__icon" aria-hidden="true">🎨</div>
+            <h3 class="skill-preview-card__title">Frontend</h3>
+            <p class="skill-preview-card__description">HTML5, CSS3, JavaScript, React</p>
           </div>
-          
-          <div class="skill-card" data-category="technical">
-            <div class="skill-card__name">CSS3</div>
-            <div class="skill-card__level">Advanced</div>
+
+          <div class="skill-preview-card">
+            <div class="skill-preview-card__icon" aria-hidden="true">⚙️</div>
+            <h3 class="skill-preview-card__title">Backend</h3>
+            <p class="skill-preview-card__description">Node.js, Python, SQL</p>
           </div>
-          
-          <div class="skill-card" data-category="technical">
-            <div class="skill-card__name">JavaScript</div>
-            <div class="skill-card__level">Advanced</div>
+
+          <div class="skill-preview-card">
+            <div class="skill-preview-card__icon" aria-hidden="true">🛠️</div>
+            <h3 class="skill-preview-card__title">Tools</h3>
+            <p class="skill-preview-card__description">Git, Responsive Design, Accessibility</p>
           </div>
-          
-          <div class="skill-card" data-category="technical">
-            <div class="skill-card__name">TypeScript</div>
-            <div class="skill-card__level">Intermediate</div>
-          </div>
-          
-          <div class="skill-card" data-category="technical">
-            <div class="skill-card__name">React</div>
-            <div class="skill-card__level">Intermediate</div>
-          </div>
-          
-          <div class="skill-card" data-category="technical">
-            <div class="skill-card__name">Node.js</div>
-            <div class="skill-card__level">Intermediate</div>
-          </div>
-          
-          <div class="skill-card" data-category="technical">
-            <div class="skill-card__name">Git</div>
-            <div class="skill-card__level">Advanced</div>
-          </div>
-          
-          <div class="skill-card" data-category="technical">
-            <div class="skill-card__name">Responsive Design</div>
-            <div class="skill-card__level">Advanced</div>
-          </div>
+        </div>
+
+        <div class="section-actions">
+          <a href="skills.html" class="btn btn--secondary">View All Skills</a>
         </div>
       </div>
     </section>
-    
-    <!-- Experience Section -->
-    <section id="experience" class="section" aria-labelledby="experience-heading" data-section>
+
+    <!-- Experience Preview Section -->
+    <section id="experience" class="section" aria-labelledby="experience-heading">
       <div class="container">
         <div class="section-heading">
           <h2 id="experience-heading" class="section-heading__title">Work Experience</h2>
-          <p class="section-heading__subtitle">
-            My professional journey and career highlights
-          </p>
+          <p class="section-heading__subtitle">My professional journey</p>
         </div>
-        
-        <div class="experience-timeline">
-          <!-- Experience Item 1 (Most Recent) -->
-          <article class="experience-item">
-            <header class="experience-item__header">
-              <h3 class="experience-item__title">Software Developer</h3>
-              <p class="experience-item__company">Company Name</p>
-              <p class="experience-item__date">January 2023 - Present</p>
-              <p class="experience-item__location">Remote</p>
+
+        <div class="experience-preview">
+          <!-- Experience Preview Item 1 -->
+          <article class="experience-preview-item">
+            <header class="experience-preview-item__header">
+              <h3 class="experience-preview-item__title">Software Developer</h3>
+              <p class="experience-preview-item__company">Company Name</p>
+              <p class="experience-preview-item__date">January 2023 - Present</p>
             </header>
-            
-            <div class="experience-item__description">
-              <p>
-                Developing and maintaining web applications using modern technologies. 
-                Collaborating with cross-functional teams to deliver high-quality solutions.
-              </p>
-            </div>
-            
-            <ul class="experience-item__achievements">
-              <li>Reduced page load time by 40% through optimization techniques</li>
-              <li>Implemented responsive design patterns improving mobile user experience</li>
-              <li>Collaborated with UX designers to create intuitive user interfaces</li>
-              <li>Mentored junior developers and conducted code reviews</li>
-            </ul>
+            <p class="experience-preview-item__description">
+              Developing and maintaining web applications using modern technologies...
+            </p>
           </article>
-          
-          <!-- Experience Item 2 -->
-          <article class="experience-item">
-            <header class="experience-item__header">
-              <h3 class="experience-item__title">Junior Developer</h3>
-              <p class="experience-item__company">Previous Company</p>
-              <p class="experience-item__date">June 2021 - December 2022</p>
-              <p class="experience-item__location">City, Country</p>
+
+          <!-- Experience Preview Item 2 -->
+          <article class="experience-preview-item">
+            <header class="experience-preview-item__header">
+              <h3 class="experience-preview-item__title">Junior Developer</h3>
+              <p class="experience-preview-item__company">Previous Company</p>
+              <p class="experience-preview-item__date">June 2021 - December 2022</p>
             </header>
-            
-            <div class="experience-item__description">
-              <p>
-                Worked on frontend development for client projects. Built responsive websites 
-                and web applications using HTML, CSS, and JavaScript.
-              </p>
-            </div>
-            
-            <ul class="experience-item__achievements">
-              <li>Developed 15+ responsive websites for diverse clients</li>
-              <li>Improved website accessibility scores to WCAG AA standards</li>
-              <li>Integrated third-party APIs and services</li>
-            </ul>
+            <p class="experience-preview-item__description">
+              Worked on frontend development for client projects...
+            </p>
           </article>
-          
-          <!-- Experience Item 3 -->
-          <article class="experience-item">
-            <header class="experience-item__header">
-              <h3 class="experience-item__title">Web Development Intern</h3>
-              <p class="experience-item__company">Startup Company</p>
-              <p class="experience-item__date">January 2021 - May 2021</p>
-              <p class="experience-item__location">City, Country</p>
-            </header>
-            
-            <div class="experience-item__description">
-              <p>
-                Assisted in developing and maintaining company website. Learned industry 
-                best practices and agile development methodologies.
-              </p>
-            </div>
-            
-            <ul class="experience-item__achievements">
-              <li>Built reusable UI components for the design system</li>
-              <li>Participated in daily standups and sprint planning</li>
-              <li>Fixed bugs and implemented feature requests</li>
-            </ul>
-          </article>
+        </div>
+
+        <div class="section-actions">
+          <a href="experience.html" class="btn btn--secondary">View Full Experience</a>
         </div>
       </div>
     </section>
-    
-    <!-- Contact Section -->
-    <section id="contact" class="section section--alternate" aria-labelledby="contact-heading" data-section>
+
+    <!-- Contact Preview Section -->
+    <section id="contact" class="section section--alternate" aria-labelledby="contact-heading">
       <div class="container">
         <div class="section-heading">
           <h2 id="contact-heading" class="section-heading__title">Get In Touch</h2>
-          <p class="section-heading__subtitle">
-            Let's connect and discuss potential opportunities
-          </p>
+          <p class="section-heading__subtitle">Let's connect and discuss</p>
         </div>
-        
-        <div class="contact-grid">
-          <!-- Email -->
-          <a href="mailto:your.email@example.com" class="contact-link">
-            <span class="contact-link__icon">📧</span>
-            <span class="contact-link__text">
-              <span class="contact-link__label">Email</span>
-              <span class="contact-link__value">your.email@example.com</span>
+
+        <div class="contact-preview-grid">
+          <a href="mailto:your.email@example.com" class="contact-preview-link">
+            <span class="contact-preview-link__icon" aria-hidden="true">📧</span>
+            <span class="contact-preview-link__text">
+              <span class="contact-preview-link__label">Email</span>
+              <span class="contact-preview-link__value">your.email@example.com</span>
             </span>
           </a>
-          
-          <!-- LinkedIn -->
-          <a 
-            href="https://linkedin.com/in/yourprofile" 
-            class="contact-link"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span class="contact-link__icon">💼</span>
-            <span class="contact-link__text">
-              <span class="contact-link__label">LinkedIn</span>
-              <span class="contact-link__value">View Profile</span>
+
+          <a href="https://linkedin.com/in/yourprofile" class="contact-preview-link" target="_blank" rel="noopener noreferrer">
+            <span class="contact-preview-link__icon" aria-hidden="true">💼</span>
+            <span class="contact-preview-link__text">
+              <span class="contact-preview-link__label">LinkedIn</span>
+              <span class="contact-preview-link__value">View Profile</span>
             </span>
           </a>
-          
-          <!-- GitHub -->
-          <a 
-            href="https://github.com/yourusername" 
-            class="contact-link"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span class="contact-link__icon">🐙</span>
-            <span class="contact-link__text">
-              <span class="contact-link__label">GitHub</span>
-              <span class="contact-link__value">View Repositories</span>
+
+          <a href="https://github.com/yourusername" class="contact-preview-link" target="_blank" rel="noopener noreferrer">
+            <span class="contact-preview-link__icon" aria-hidden="true">🐙</span>
+            <span class="contact-preview-link__text">
+              <span class="contact-preview-link__label">GitHub</span>
+              <span class="contact-preview-link__value">View Repositories</span>
             </span>
           </a>
-          
-          <!-- Location -->
-          <div class="contact-link">
-            <span class="contact-link__icon">📍</span>
-            <span class="contact-link__text">
-              <span class="contact-link__label">Location</span>
-              <span class="contact-link__value">City, Country</span>
-            </span>
-          </div>
+        </div>
+
+        <div class="section-actions">
+          <a href="contact.html" class="btn btn--primary">Contact Me</a>
         </div>
       </div>
     </section>

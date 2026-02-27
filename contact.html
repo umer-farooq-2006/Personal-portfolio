@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get in touch - Contact information and ways to connect">
+  <meta name="author" content="Your Name">
+  <title>Contact - Your Name | Portfolio</title>
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/accessibility.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <!-- Skip to content link for accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header and Navigation -->
+  <header class="header" role="banner">
+    <div class="container">
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav__brand">Your Name</a>
+
+        <button class="nav__toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span>☰</span>
+        </button>
+
+        <ul class="nav__list">
+          <li><a href="bio.html" class="nav__link">Bio</a></li>
+          <li><a href="skills.html" class="nav__link">Skills</a></li>
+          <li><a href="experience.html" class="nav__link">Experience</a></li>
+          <li><a href="contact.html" class="nav__link" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Breadcrumb Navigation -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+      <ol class="breadcrumb__list">
+        <li><a href="index.html">Home</a></li>
+        <li><span aria-current="page">Contact</span></li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main id="main-content" role="main">
+
+    <!-- Hero Section -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="container">
+        <div class="hero__content">
+          <h1 id="hero-heading" class="hero__title">Get In Touch</h1>
+          <p class="hero__subtitle">Let's connect and discuss potential opportunities</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="section-heading">
+          <h2 id="contact-heading" class="section-heading__title">Contact Information</h2>
+          <p class="section-heading__subtitle">
+            Feel free to reach out through any of these channels
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Email -->
+          <a href="mailto:your.email@example.com" class="contact-link">
+            <span class="contact-link__icon" aria-hidden="true">📧</span>
+            <span class="contact-link__text">
+              <span class="contact-link__label">Email</span>
+              <span class="contact-link__value">your.email@example.com</span>
+            </span>
+          </a>
+
+          <!-- LinkedIn -->
+          <a
+            href="https://linkedin.com/in/yourprofile"
+            class="contact-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="contact-link__icon" aria-hidden="true">💼</span>
+            <span class="contact-link__text">
+              <span class="contact-link__label">LinkedIn</span>
+              <span class="contact-link__value">View Profile</span>
+            </span>
+          </a>
+
+          <!-- GitHub -->
+          <a
+            href="https://github.com/yourusername"
+            class="contact-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="contact-link__icon" aria-hidden="true">🐙</span>
+            <span class="contact-link__text">
+              <span class="contact-link__label">GitHub</span>
+              <span class="contact-link__value">View Repositories</span>
+            </span>
+          </a>
+
+          <!-- Location -->
+          <div class="contact-link">
+            <span class="contact-link__icon" aria-hidden="true">📍</span>
+            <span class="contact-link__text">
+              <span class="contact-link__label">Location</span>
+              <span class="contact-link__value">City, Country</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-container">
+          <h3 class="contact-form-heading">Or send me a message</h3>
+          
+          <form class="contact-form" action="#" method="POST" novalidate>
+            <div class="form-group">
+              <label for="name" class="form-label">
+                Name
+                <span class="required" aria-hidden="true">*</span>
+              </label>
+              <input 
+                type="text" 
+                id="name" 
+                name="name" 
+                class="form-input"
+                required
+                minlength="2"
+                maxlength="100"
+                aria-required="true"
+                aria-describedby="name-error name-help"
+                placeholder="Your full name"
+                autocomplete="name"
+              >
+              <span id="name-help" class="form-help">Please enter your full name</span>
+              <span id="name-error" class="form-error" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="form-label">
+                Email
+                <span class="required" aria-hidden="true">*</span>
+              </label>
+              <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                class="form-input"
+                required
+                aria-required="true"
+                aria-describedby="email-error email-help"
+                placeholder="your.email@example.com"
+                autocomplete="email"
+              >
+              <span id="email-help" class="form-help">We'll never share your email with anyone else</span>
+              <span id="email-error" class="form-error" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="subject" class="form-label">Subject</label>
+              <input 
+                type="text" 
+                id="subject" 
+                name="subject" 
+                class="form-input"
+                maxlength="200"
+                aria-describedby="subject-help"
+                placeholder="What's this about?"
+              >
+              <span id="subject-help" class="form-help">Optional - helps me understand your message</span>
+            </div>
+
+            <div class="form-group">
+              <label for="message" class="form-label">
+                Message
+                <span class="required" aria-hidden="true">*</span>
+              </label>
+              <textarea 
+                id="message" 
+                name="message" 
+                class="form-input"
+                rows="6"
+                required
+                minlength="10"
+                maxlength="2000"
+                aria-required="true"
+                aria-describedby="message-error message-help"
+                placeholder="Your message..."
+              ></textarea>
+              <span id="message-help" class="form-help">Minimum 10 characters</span>
+              <span id="message-error" class="form-error" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn--primary btn--large">
+                <span class="btn__text">Send Message</span>
+                <span class="btn__spinner" aria-hidden="true"></span>
+              </button>
+            </div>
+
+            <!-- Success Message (hidden by default) -->
+            <div class="form-success" role="status" hidden>
+              <p>Thank you! Your message has been sent successfully.</p>
+              <p>I'll get back to you within 24-48 hours.</p>
+            </div>
+          </form>
+        </div>
+
+        <!-- Response Time -->
+        <div class="contact-response-time">
+          <p>
+            <strong>Response Time:</strong> I typically respond within 24-48 hours on business days.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__copyright">
+          <p>&copy; 2026 Your Name. All rights reserved.</p>
+        </div>
+
+        <ul class="social-links">
+          <li>
+            <a
+              href="https://linkedin.com/in/yourprofile"
+              class="social-links__link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              💼
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/yourusername"
+              class="social-links__link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+            >
+              🐙
+            </a>
+          </li>
+          <li>
+            <a
+              href="mailto:your.email@example.com"
+              class="social-links__link"
+              aria-label="Email"
+            >
+              📧
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript Files -->
+  <script src="js/main.js" defer></script>
+  <script src="js/navigation.js" defer></script>
+</body>
+</html>
